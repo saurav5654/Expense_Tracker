@@ -1,0 +1,135 @@
+:root {
+    --primary: #6c5ce7;
+    --income: #2ecc71;
+    --expense: #e74c3c;
+    --bg: #f0f2f5;
+    --text: #2d3436;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--bg);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20px 10px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px; /* Default for mobile/tablet */
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Balance Card */
+.balance-card {
+    background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.balance-card h1 { font-size: 2.5rem; word-wrap: break-word; }
+
+/* Summary Boxes */
+.summary-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.summary-box {
+    flex: 1;
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+/* Form Styles */
+input, select, .btn {
+    width: 100%;
+    padding: 14px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+.btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:active { transform: scale(0.98); }
+
+/* List Styles */
+.list {
+    list-style: none;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 10px;
+}
+
+li {
+    background: #f9f9f9;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-right: 5px solid #ddd;
+}
+
+li.plus { border-right-color: var(--income); }
+li.minus { border-right-color: var(--expense); }
+
+.delete-btn {
+    background: var(--expense);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* --- RESPONSIVE BREAKPOINT FOR PC --- */
+@media (min-width: 800px) {
+    .container {
+        max-width: 900px; /* Wider for PC */
+        padding: 40px;
+    }
+
+    .main-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two column layout */
+        gap: 40px;
+        align-items: start;
+    }
+
+    .balance-card { margin-bottom: 30px; }
+}
+
+/* Chart size control */
+.chart-section {
+    max-width: 250px;
+    margin: 0 auto 20px auto;
+}
